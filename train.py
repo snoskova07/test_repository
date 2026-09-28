@@ -4,8 +4,8 @@
 """
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-
+#from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import DecisionTreeClassifier
 
 def main():
     X, y = load_iris(return_X_y=True)
@@ -13,7 +13,7 @@ def main():
         X, y, test_size=0.3, random_state=42
     )
 
-    model = RandomForestClassifier(max_depth=8, random_state=42)
+    model = DecisionTreeClassifier(max_depth=8, random_state=42)
     model.fit(X_train, y_train)
 
     score = model.score(X_test, y_test)
